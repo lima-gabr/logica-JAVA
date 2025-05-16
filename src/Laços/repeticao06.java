@@ -10,51 +10,40 @@ import java.util.Scanner;
 public class repeticao06 {
 
 
-    public static String receberNome(){
-
-        Scanner sc = new Scanner (System.in);
-
-        System.out.print("Digite o nome do aluno: ");
-        String nome = sc.nextLine();
-
-        return nome;
-    } 
-
-    public static int receberIdade(){
-
-        Scanner sc = new Scanner (System.in);
-
-        System.out.print("Digite a idade do aluno: ");
-        int idade = sc.nextInt();
-
-        return idade;   
-    }
-
-     public static char receberSexo(){
-
-        Scanner sc = new Scanner (System.in);
-
-        System.out.println("Digite o sexo do aluno. ");
-        System.out.print("F ou M: ");
-
-        char sexo = sc.next().charAt(0); 
-
-        return sexo;
-    }
-
-    public static int calcularMaisVelho(String nome, int idade){
-
-        int maior;
-        String maiorNome;
-
-        
-
-        return maior;
-        return maiorNome;
-    }
-   
-
     public static void main(String[] args) {
         
+        Scanner sc = new Scanner(System.in);
+
+        int maiorIdade = 0;
+        String maiorNome = "";
+        int c = 1;
+
+        do{
+
+            System.out.print("Digite o nome do aluno "+c+": ");
+            String nome = sc.nextLine();
+            sc.nextLine();
+
+            System.out.print("Digite a idade do aluno "+c+": ");
+            int idade = sc.nextInt();
+
+
+            if(idade > maiorIdade){
+                maiorIdade = idade;
+                maiorNome = nome;
+            }
+
+            c++;
+
+            System.out.println("");
+
+        } while(c<=5);
+
+
+        System.out.printf("ALUNO MAIS VELHO: %s\n", maiorNome);
+        System.out.printf("IDADE DO %s: %d\n", maiorNome,maiorIdade);
+
     }
+
+  
 }
